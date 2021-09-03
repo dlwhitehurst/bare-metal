@@ -1,0 +1,16 @@
+---
+- name: Set onprem Default Variables
+  set_fact:
+    k8s: "{{ defaults | combine(onprem, recursive=true)  }}"
+  vars:
+    defaults:
+      state_bucket: "{{ cluster_fqdn }}-bare-metal"
+      state_bucket_region: us-east-1
+
+- include_tasks: create_cluster.yaml
+  tags: [ requires_cluster ]
+  when: ('dry-run' not in ansible_run_tags) and (cluster_state == 'present')
+
+- include_tasks: delete_cluster.yaml
+  tags: [ requires_cluster ]
+  when: ('dry-run' not in ansible_run_tags) and (cluster_state == 'absent')

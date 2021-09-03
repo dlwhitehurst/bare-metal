@@ -1,0 +1,25 @@
+---
+#- hosts: localhost
+#  connection: local
+#  gather_facts: no
+#  tasks:
+#  - include_tasks: tasks/pre-flight.yaml
+
+- hosts: all
+  remote_user: root
+  roles:
+    - kubernetes-bare-metal
+  vars:
+    kubernetes_control_plane_endpoint: master.k8s.loc
+    kubernetes_cluster_name: dev
+    k8s_version: 1.20.0
+
+#  - name: k8s 
+#    include_role:
+#      name: dlwhitehurst.onprem.k8s
+#    when: k8s.enabled
+#    vars:
+#      cluster_state: present
+#    tags: [ k8s ]
+
+

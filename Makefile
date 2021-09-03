@@ -1,5 +1,5 @@
 # Also needs to be updated in galaxy.yml
-VERSION = 0.6.0
+VERSION = 0.1.0
 
 clean:
 	rm -f dlwhitehurst-bare-metal-${VERSION}.tar.gz

@@ -1,0 +1,15 @@
+---
+---
+- name: Create Directory
+  file:
+    path: /tmp/onprem
+    state: directory
+
+- name: Generate an OpenSSH Key Pair
+  community.crypto.openssh_keypair:
+    path: /tmp/onprem/id_rsa
+
+- name: Create Cluster
+  register: result
+  shell: |
+    ls -la 

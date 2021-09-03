@@ -1,0 +1,16 @@
+namespace: dlwhitehurst 
+name: bare-metal 
+version: 0.1.0
+readme: README.md
+authors:
+- David L Whitehurst <dwhitehurst@ms3-inc.com>
+description: A collection to provision David L Whitehurst's bare-metal Platform
+dependencies:
+  amazon.aws: '==1.4.0'
+  community.aws: '==1.4.0'
+  community.kubernetes: '==1.2.0'
+  community.general: '==2.5.1'
+repository: https://github.com/dlwhitehurst/bare-metal
+documentation: https://github.com/dlwhitehurst/bare-metal
+homepage: https://github.com/dlwhitehurst/bare-metal
+issues: https://github.com/dlwhitehurst/bare-metal/issues
